@@ -1,0 +1,15 @@
+<div class="vending-machine">
+  <h1>Vending Machine</h1>
+
+  <app-money-slot
+    [amountInserted]="amountInserted"
+    (insertQuarter)="insertQuarter()"
+  ></app-money-slot>
+
+  <app-product-list
+    [products]="products"
+    (purchase)="purchase($event)"
+  ></app-product-list>
+
+  <app-error-message *ngIf="errorMessage" [message]="errorMessage"></app-error-message>
+</div>

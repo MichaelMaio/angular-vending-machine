@@ -1,0 +1,19 @@
+<table>
+  <thead>
+    <tr>
+      <th>Product</th>
+      <th>Price</th>
+      <th>Remaining</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let product of products; let i = index">
+      <td (click)="handlePurchase(i)" class="clickable-product">
+        <img [src]="'assets/products/images/' + product.image" [alt]="product.name" />
+        {{ product.name }}
+      </td>
+      <td>${{ product.price }}</td>
+      <td>{{ product.remaining }}</td>
+    </tr>
+  </tbody>
+</table>

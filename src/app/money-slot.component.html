@@ -1,0 +1,9 @@
+<div class="money-slot">
+  <img
+    src="assets/money/images/quarter.png"
+    alt="Insert quarter"
+    (click)="handleClick()"
+    class="quarter-image"
+  />
+  <div class="money-display">${{ amountInserted.toFixed(2) }}</div>
+</div>

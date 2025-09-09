@@ -1,0 +1,22 @@
+.money-slot {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.quarter-image {
+  width: 50px;
+  margin-right: 12px;
+  cursor: pointer;
+}
+
+.money-display {
+  font-size: 18px;
+  font-weight: bold;
+  border: 1px solid #ccc;
+  padding: 6px 12px;
+  border-radius: 4px;
+  min-width: 100px;
+  text-align: center;
+  background-color: #f0f0f0;
+}
