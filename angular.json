@@ -13,6 +13,7 @@
         "build": {
           "builder": "@angular/build:application",
           "options": {
+            "outputPath": "dist/angular-vending-machine",
             "browser": "src/main.ts",
             "polyfills": [
               "zone.js"
@@ -40,12 +41,17 @@
                   "maximumError": "8kB"
                 }
               ],
-              "outputHashing": "all"
+              "outputHashing": "all",
+              "baseHref": "/angular-vending-machine/"
             },
             "development": {
               "optimization": false,
               "extractLicenses": false,
               "sourceMap": true
+            },
+            "gh-pages": {
+              "baseHref": "/angular-vending-machine/",
+              "outputPath": "dist/angular-vending-machine"
             }
           },
           "defaultConfiguration": "production"
