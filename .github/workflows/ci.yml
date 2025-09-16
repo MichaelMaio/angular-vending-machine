@@ -59,3 +59,9 @@ jobs:
 
       - name: Build Angular app for GitHub Pages
         run: npm run build -- --base-href=/angular-vending-machine/
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist/angular-vending-machine
