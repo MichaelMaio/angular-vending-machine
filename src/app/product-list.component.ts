@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -10,9 +10,10 @@ import { CommonModule } from '@angular/common';
 })
 export class ProductListComponent {
   @Input() products: any[] = [];
-  @Output() purchase = new EventEmitter<number>();
+  @Input() buttonLabel = 'Add to Cart';
+  @Output() action = new EventEmitter<number>();
 
-  handlePurchase(index: number) {
-    this.purchase.emit(index);
+  handleAction(index: number) {
+    this.action.emit(index);
   }
 }

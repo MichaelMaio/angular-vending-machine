@@ -1,0 +1,52 @@
+<section class="page">
+  <h2>Checkout</h2>
+
+  <div *ngIf="success" class="confirmation">
+    <h3>Order Confirmed</h3>
+    <p>{{ confirmation }}</p>
+    <a routerLink="/inventory"><button type="button">Continue Shopping</button></a>
+  </div>
+
+  <div *ngIf="!success">
+    <p *ngIf="store.cartItems.length">Enter shipping and payment details to complete your order.</p>
+
+    <form *ngIf="store.cartItems.length" (ngSubmit)="submit()">
+      <div class="field">
+        <label for="address">Address</label>
+        <input id="address" name="address" [(ngModel)]="address" required />
+      </div>
+
+      <div class="field">
+        <label for="city">City</label>
+        <input id="city" name="city" [(ngModel)]="city" required />
+      </div>
+
+      <div class="field">
+        <label for="zip">Zip</label>
+        <input id="zip" name="zip" [(ngModel)]="zip" required />
+      </div>
+
+      <div class="field">
+        <label for="cardNumber">Card Number</label>
+        <input id="cardNumber" name="cardNumber" [(ngModel)]="cardNumber" (input)="onCardInput($event)" maxlength="23" placeholder="0000 0000 0000 0000" required />
+      </div>
+
+      <div class="field">
+        <label for="expiry">Expiry</label>
+        <input id="expiry" name="expiry" [(ngModel)]="expiry" required />
+      </div>
+
+      <div class="field">
+        <label for="cvv">CVV</label>
+        <input id="cvv" name="cvv" [(ngModel)]="cvv" required />
+      </div>
+
+      <button type="submit">Place Order</button>
+      <p class="error" *ngIf="error">{{ error }}</p>
+    </form>
+
+    <div *ngIf="!store.cartItems.length">
+      <p>Your cart is empty. <a routerLink="/inventory">Add items first</a>.</p>
+    </div>
+  </div>
+</section>

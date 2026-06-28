@@ -1,0 +1,14 @@
+<section class="page">
+  <div class="page-heading">
+    <h2>Inventory</h2>
+    <p>Choose pop from the inventory and add it to your cart.</p>
+  </div>
+
+  <app-product-list
+    [products]="store.products"
+    [buttonLabel]="'Add to Cart'"
+    (action)="addToCart($event)"
+  ></app-product-list>
+
+  <p class="message" *ngIf="message">{{ message }}</p>
+</section>

@@ -1,0 +1,19 @@
+<section class="page">
+  <h2>Login</h2>
+  <p>Use standard_user / standard_password to enter the Pop Shop.</p>
+
+  <form (ngSubmit)="login()">
+    <div class="field">
+      <label for="username">Username</label>
+      <input id="username" name="username" [(ngModel)]="username" required />
+    </div>
+
+    <div class="field">
+      <label for="password">Password</label>
+      <input id="password" name="password" type="password" [(ngModel)]="password" required />
+    </div>
+
+    <button type="submit">Sign In</button>
+    
+  </form>
+</section>
